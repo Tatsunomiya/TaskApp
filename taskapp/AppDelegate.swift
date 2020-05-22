@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         
     }
-    center.delegate = self
+        center.delegate = self  
     
     return true
 }
@@ -41,10 +41,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletetionHandler completionHandler: @escaping(UNNotificationPresentationOptions) ->Void) {
-        
-        completionHandler([.alert, .sound])
-    }
+//    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletetionHandler completionHandler: @escaping(UNNotificationPresentationOptions) ->Void) {
+//        
+//        completionHandler([.alert, .sound])
+//    }
 
 
 }

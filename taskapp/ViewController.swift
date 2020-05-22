@@ -30,7 +30,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         // Do any additional setup after loading the view.
         
         tableView.delegate = self
-        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -83,6 +83,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             try! realm.write {
                 self.realm.delete(self.taskArray[indexPath.row])
                 tableView.deleteRows(at: [indexPath], with: .fade)
+                
             }
             
             center.getPendingNotificationRequests {(requests: [UNNotificationRequest]) in

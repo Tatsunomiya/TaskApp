@@ -1,12 +1,15 @@
-# Uncomment the next line to define a global platform for your project
-platform :ios, '13.1'
+タスク管理アプリの課題を実行中なのですが、
+InputViewContorollerでタスクを文字を書いた後にBackで戻っているのですが、
 
-target 'taskapp' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+ViewWillDisapperarメソッドの中身はしっかり記述しているのですが、Backで戻っても表示されません
 
-  # Pods for taskapp
 
-  pod 'RealmSwift', '3.20.0'
 
-end
+InputContorollerのViewWillAppearも正しく記述しているのですが、
+
+とりあえずRealmデーターベースに入力したデータが保存されているのか確認すればどこで止まってるのかわかるのですが、
+
+Webアプリケーションではuse Database 、show tables などでやってましたが、
+
+
+Realmではどうやるのでしょう？
