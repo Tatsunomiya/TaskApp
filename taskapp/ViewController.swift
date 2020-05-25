@@ -184,38 +184,20 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
 
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    // When there is no text, filteredData is the same as the original data
-    // When user has entered text into the search box
-    // Use the filter method to iterate over all items in the data array
-    // For each item, return true if the item should be included and false if the
-    // item should NOT be included
-        
 
         
-//                    let predicate = NSPredicate("category",contains: "searchText")
         
         
         
        let predicate = NSPredicate(format: "category contains %@", searchText)
         
-
-        
-
-
-        
-        
-
-
-        
         taskArray = realm.objects(Task.self).filter(predicate)
         
         searchBar.showsCancelButton = true
 
-           tableView.reloadData()
+        tableView.reloadData()
 
-
-
-}
+    }
     
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -229,6 +211,11 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
 
         print("キャンセルボタンがタップ")
     }
+    
+    // アプリがフォアグラウンドの時に通知を受け取ると呼ばれるメソッド --- ここから ---
+     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+         completionHandler([.alert, .sound])
+     } // --- ここまで追加 ---
 
 }
 

@@ -20,11 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         center.requestAuthorization(options: [.alert, .sound]) {(granted, error) in
         
         
-    }
-        center.delegate = self  
+        }
+        center.delegate = self
+        
+        return true
+     }
     
-    return true
-}
+    
+
+
+
 
     // MARK: UISceneSession Lifecycle
 
@@ -41,10 +46,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     
-//    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletetionHandler completionHandler: @escaping(UNNotificationPresentationOptions) ->Void) {
-//        
-//        completionHandler([.alert, .sound])
-//    }
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletetionHandler completionHandler: @escaping(UNNotificationPresentationOptions) ->Void) {
+        
+        completionHandler([.alert, .sound])
+    }
 
 
 }
