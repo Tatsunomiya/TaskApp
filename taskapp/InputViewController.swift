@@ -47,6 +47,7 @@ class InputViewController: UIViewController {
         titleTextField.text = task.title
         contentsTextView.text = task.contents
         datePicker.date = task.date
+        categoryTextView.text = task.category
 
 
 
@@ -125,3 +126,7 @@ class InputViewController: UIViewController {
     }
 
 }
+
+
+
+
